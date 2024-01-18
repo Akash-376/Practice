@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id="mb" class="com.masai.MyBusinessClass" />-->
+
+    <bean id="c" class="com.masai.couplingDemo.Car" />
+    <bean id="b" class="com.masai.couplingDemo.Bike" />
+    <bean id="t" class="com.masai.couplingDemo.Travel">
+        <property name="v" ref="c"/>
+        <property name="numberOFPerson" value="6"/>
+    </bean>
+
+<!--    <bean id="dao" class="com.masai.dummyLayeredApplication.DAOBean" />-->
+<!--    <bean id="service" class="com.masai.dummyLayeredApplication.ServiceBean" autowire="byType"/>-->
+
+<!--    <bean id="pb" class="com.masai.dummyLayeredApplication.PresentationBean" autowire="byType"/>-->
+
+
+
+<!--    <bean id="d1" class="com.masai.constructorAutoWiring.Demo" autowire="constructor"/>-->
+
+<!--    <bean id="a5" class="com.masai.constructorAutoWiring.A" />-->
+<!--    <bean id="a1" class="com.masai.constructorAutoWiring.A" />-->
+<!--    <bean id="b5" class="com.masai.constructorAutoWiring.B" />-->
+
+
+
+        <bean id="a1" class="com.masai.initializingAndDisposingBean.AA" init-method="mySetup" destroy-method="destroy">
+            <property name="url" value="jdbc:mysql://localhost:3306/sb101_b23_db1"/>
+            <property name="driverName" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="username" value="root"/>
+            <property name="password" value="Akash@1997"/>
+        </bean>
+</beans>
